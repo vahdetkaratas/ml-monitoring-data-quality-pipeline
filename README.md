@@ -1,6 +1,18 @@
 # ML Monitoring & Data Quality Pipeline
 
+[![CI](https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/actions/workflows/ci.yml)
+
 Batch monitoring demo for **tabular** scoring data: validate incoming batches against a JSON schema, compare to a **reference** dataset (numeric/categorical drift, prediction behaviour), and write **JSON reports**, a **CSV overview**, and a **static HTML run report**. Includes a small **Streamlit** app that reads those artifacts.
+
+## Live demo
+
+**Interactive viewer (Streamlit):** [monitoring.vahdetkaratas.com](https://monitoring.vahdetkaratas.com/)
+
+The hosted app is the **interactive** dashboard (pick a batch, see status, alerts, and charts). The **static HTML run summary** is a separate artifact: `artifacts/reports/monitoring_run_report.html` in this repo (open locally or browse on GitHub)—it is produced by `run_full_monitoring`, not by Streamlit.
+
+![Streamlit monitoring viewer](reports/figures/streamlit_demo.png)
+
+To refresh the screenshot after UI changes: `pip install playwright`, `playwright install chromium`, then `python scripts/capture_streamlit_screenshot.py` (optional env `STREAMLIT_DEMO_URL`).
 
 ## What this is
 
@@ -75,6 +87,8 @@ Open the URL Streamlit prints (default `http://localhost:8501`). The app loads `
 ```bash
 python -m pytest tests -q
 ```
+
+On every push / PR to `main`, **GitHub Actions** runs the same test suite (see `.github/workflows/ci.yml`).
 
 ## Why VPS (not Vercel) for a “live” demo
 
