@@ -1,0 +1,16 @@
+{
+  "__meta__": {
+    "schema_version": "1.0"
+  },
+  "customer_id": {"dtype": "string", "required": true},
+  "tenure": {"dtype": "int", "required": true, "min": 0, "max": 120},
+  "monthly_charges": {"dtype": "float", "required": true, "min": 0, "max": 500},
+  "total_charges": {"dtype": "float", "required": false, "min": 0, "max": 10000},
+  "contract": {"dtype": "category", "required": true, "allowed_values": ["Month-to-month", "One year", "Two year"]},
+  "internet_service": {"dtype": "category", "required": false, "allowed_values": ["DSL", "Fiber optic", "No"]},
+  "payment_method": {"dtype": "category", "required": false},
+  "num_active_services": {"dtype": "int", "required": false, "min": 0, "max": 10},
+  "senior_citizen": {"dtype": "int", "required": false, "min": 0, "max": 1},
+  "churn_score": {"dtype": "float", "required": true, "min": 0, "max": 1},
+  "predicted_label": {"dtype": "int", "required": true, "min": 0, "max": 1}
+}

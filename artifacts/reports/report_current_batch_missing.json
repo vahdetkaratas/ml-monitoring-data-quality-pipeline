@@ -1,0 +1,45 @@
+{
+  "batch_name": "current_batch_missing.csv",
+  "overall_status": "warning",
+  "summary": {
+    "validation_status": "warning",
+    "drift_status": "ok",
+    "prediction_monitoring_status": "ok"
+  },
+  "alert_count": 1,
+  "alerts": [
+    {
+      "type": "validation",
+      "severity": "WARNING",
+      "message": "Missing above threshold: ['monthly_charges', 'total_charges', 'num_active_services']"
+    }
+  ],
+  "decision_summary": {
+    "system_status": "WARNING",
+    "severity_overview": {
+      "highest_alert_severity": "WARNING",
+      "counts": {
+        "CRITICAL": 0,
+        "WARNING": 1,
+        "INFO": 0
+      },
+      "attention_priority": "Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise."
+    },
+    "primary_issues": [
+      "[WARNING] Missing above threshold: ['monthly_charges', 'total_charges', 'num_active_services']"
+    ],
+    "recommended_actions": [
+      "Triage validation warnings with domain owners (missing rates, ranges, categories, or unknown columns) and update the schema or pipeline as needed."
+    ]
+  },
+  "run_metadata": {
+    "run_id": "6aa5b91a-5e21-470c-bd3c-f0f253fd217c",
+    "generated_at": "2026-03-25T02:35:55+00:00",
+    "n_batches": 5,
+    "batch_index": 3,
+    "schema_version": "1.0",
+    "pipeline_version": "1.1.0",
+    "reference_dataset": "data\\reference\\reference_dataset.csv",
+    "current_batch_file": "data\\current\\current_batch_missing.csv"
+  }
+}

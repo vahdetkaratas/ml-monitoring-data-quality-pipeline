@@ -1,0 +1,8 @@
+# Python 3.10+ recommended. Pin versions for reproducible installs / demos.
+pandas==2.2.3
+numpy==2.0.2
+scipy==1.14.1
+pytest==8.3.4
+matplotlib==3.9.2
+streamlit==1.39.0
+jupyter==1.1.1

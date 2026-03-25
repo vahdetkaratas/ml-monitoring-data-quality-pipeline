@@ -1,0 +1,37 @@
+{
+  "batch_name": "current_batch_clean.csv",
+  "overall_status": "ok",
+  "summary": {
+    "validation_status": "ok",
+    "drift_status": "ok",
+    "prediction_monitoring_status": "ok"
+  },
+  "alert_count": 0,
+  "alerts": [],
+  "decision_summary": {
+    "system_status": "OK",
+    "severity_overview": {
+      "highest_alert_severity": "OK",
+      "counts": {
+        "CRITICAL": 0,
+        "WARNING": 0,
+        "INFO": 0
+      },
+      "attention_priority": "Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise."
+    },
+    "primary_issues": [],
+    "recommended_actions": [
+      "No alerts fired for this batch under current thresholds; continue routine monitoring."
+    ]
+  },
+  "run_metadata": {
+    "run_id": "6aa5b91a-5e21-470c-bd3c-f0f253fd217c",
+    "generated_at": "2026-03-25T02:35:55+00:00",
+    "n_batches": 5,
+    "batch_index": 2,
+    "schema_version": "1.0",
+    "pipeline_version": "1.1.0",
+    "reference_dataset": "data\\reference\\reference_dataset.csv",
+    "current_batch_file": "data\\current\\current_batch_clean.csv"
+  }
+}

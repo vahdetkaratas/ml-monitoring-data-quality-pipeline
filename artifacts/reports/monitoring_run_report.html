@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ML monitoring — run report</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; line-height: 1.5;
+      max-width: 920px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; color: #1a1a1a; }
+    h1 { font-size: 1.5rem; border-bottom: 2px solid #333; padding-bottom: 0.35rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #bbb; padding-bottom: 0.2rem; }
+    h3 { font-size: 1.05rem; margin-top: 1.25rem; }
+    table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; font-size: 0.92rem; }
+    th, td { border: 1px solid #ccc; padding: 0.45rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: #f4f4f4; font-weight: 600; }
+    table.compact th { width: 12rem; }
+    .muted { color: #555; font-size: 0.9rem; }
+    .tag-critical { font-weight: 600; color: #7f1d1d; }
+    .tag-warning { font-weight: 600; color: #92400e; }
+    .tag-ok { color: #14532d; }
+    section.batch { border-left: 3px solid #ddd; padding-left: 1rem; margin-top: 1.5rem; }
+    footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>ML monitoring — run report</h1>
+  <p class="muted">Static export from batch monitoring JSON. Open alongside <code>artifacts/reports/*.json</code> for full detail.</p>
+
+  <h2>Run metadata</h2>
+  <table class="compact"><tr><th>run_id</th><td>6aa5b91a-5e21-470c-bd3c-f0f253fd217c</td></tr><tr><th>n_batches</th><td>5</td></tr><tr><th>schema_version</th><td>1.0</td></tr><tr><th>pipeline_version</th><td>1.1.0</td></tr><tr><th>reference_dataset</th><td>data\reference\reference_dataset.csv</td></tr></table>
+  <p class="muted">Per-batch timestamps and file paths are listed under each batch below.</p>
+
+  <h2>Run overview</h2>
+  <table>
+    <thead><tr><th>Batch</th><th>Overall</th><th>System (decision)</th><th>Alert count</th></tr></thead>
+    <tbody><tr><td>current_batch_categorical_shift.csv</td><td><span class='tag-critical'>critical</span></td><td>CRITICAL</td><td>1</td></tr><tr><td>current_batch_clean.csv</td><td><span class='tag-ok'>ok</span></td><td>OK</td><td>0</td></tr><tr><td>current_batch_missing.csv</td><td><span class='tag-warning'>warning</span></td><td>WARNING</td><td>1</td></tr><tr><td>current_batch_numeric_drift.csv</td><td><span class='tag-critical'>critical</span></td><td>CRITICAL</td><td>1</td></tr><tr><td>current_batch_prediction_shift.csv</td><td><span class='tag-critical'>critical</span></td><td>CRITICAL</td><td>2</td></tr></tbody>
+  </table>
+
+  <h2>Batch details</h2>
+  <section class="batch">
+  <h2 id="current_batch_categorical_shift">current_batch_categorical_shift.csv</h2>
+  <p><strong>Overall status:</strong> <span class="tag-critical">critical</span>
+ · <strong>Decision (system):</strong> CRITICAL
+ · <strong>Alerts:</strong> 1</p>
+  <p class='muted'>Batch 1 of 5 · Generated (UTC): 2026-03-25T02:35:55+00:00 · File: data\current\current_batch_categorical_shift.csv</p>
+  <h3>Severity overview</h3>
+  <p><strong>Worst alert level:</strong> 
+CRITICAL
+ · Counts: CRITICAL=1, WARNING=0, INFO=0</p>
+  <p class='muted'>Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise.</p>
+  <h3>Decision summary</h3>
+  <p><strong>Primary issues</strong></p>
+  <ul><li>[CRITICAL] High drift count: 1</li></ul>
+  <p><strong>Recommended actions</strong></p>
+  <ul><li>Investigate high-drift features vs the reference window: check definitions, ingestion, and whether the cohort mix changed materially.</li></ul>
+  <h3>Layer status (validation / drift / prediction)</h3>
+  <table class='compact'>
+    <tr><th>Validation</th><td><span class='tag-ok'>ok</span></td></tr>
+    <tr><th>Drift</th><td><span class='tag-critical'>critical</span></td></tr>
+    <tr><th>Prediction monitoring</th><td><span class='tag-ok'>ok</span></td></tr>
+  </table>
+  <h3>Alerts</h3>
+  <table><thead><tr><th>Severity</th><th>Type</th><th>Message</th></tr></thead><tbody><tr><td>CRITICAL</td><td>drift</td><td>High drift count: 1</td></tr></tbody></table>
+</section>
+<section class="batch">
+  <h2 id="current_batch_clean">current_batch_clean.csv</h2>
+  <p><strong>Overall status:</strong> <span class="tag-ok">ok</span>
+ · <strong>Decision (system):</strong> OK
+ · <strong>Alerts:</strong> 0</p>
+  <p class='muted'>Batch 2 of 5 · Generated (UTC): 2026-03-25T02:35:55+00:00 · File: data\current\current_batch_clean.csv</p>
+  <h3>Severity overview</h3>
+  <p><strong>Worst alert level:</strong> 
+OK
+ · Counts: CRITICAL=0, WARNING=0, INFO=0</p>
+  <p class='muted'>Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise.</p>
+  <h3>Decision summary</h3>
+  <p><strong>Primary issues</strong></p>
+  <ul><li class='muted'>None</li></ul>
+  <p><strong>Recommended actions</strong></p>
+  <ul><li>No alerts fired for this batch under current thresholds; continue routine monitoring.</li></ul>
+  <h3>Layer status (validation / drift / prediction)</h3>
+  <table class='compact'>
+    <tr><th>Validation</th><td><span class='tag-ok'>ok</span></td></tr>
+    <tr><th>Drift</th><td><span class='tag-ok'>ok</span></td></tr>
+    <tr><th>Prediction monitoring</th><td><span class='tag-ok'>ok</span></td></tr>
+  </table>
+  <h3>Alerts</h3>
+  <p class='muted'>No alerts.</p>
+</section>
+<section class="batch">
+  <h2 id="current_batch_missing">current_batch_missing.csv</h2>
+  <p><strong>Overall status:</strong> <span class="tag-warning">warning</span>
+ · <strong>Decision (system):</strong> WARNING
+ · <strong>Alerts:</strong> 1</p>
+  <p class='muted'>Batch 3 of 5 · Generated (UTC): 2026-03-25T02:35:55+00:00 · File: data\current\current_batch_missing.csv</p>
+  <h3>Severity overview</h3>
+  <p><strong>Worst alert level:</strong> 
+WARNING
+ · Counts: CRITICAL=0, WARNING=1, INFO=0</p>
+  <p class='muted'>Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise.</p>
+  <h3>Decision summary</h3>
+  <p><strong>Primary issues</strong></p>
+  <ul><li>[WARNING] Missing above threshold: ['monthly_charges', 'total_charges', 'num_active_services']</li></ul>
+  <p><strong>Recommended actions</strong></p>
+  <ul><li>Triage validation warnings with domain owners (missing rates, ranges, categories, or unknown columns) and update the schema or pipeline as needed.</li></ul>
+  <h3>Layer status (validation / drift / prediction)</h3>
+  <table class='compact'>
+    <tr><th>Validation</th><td><span class='tag-warning'>warning</span></td></tr>
+    <tr><th>Drift</th><td><span class='tag-ok'>ok</span></td></tr>
+    <tr><th>Prediction monitoring</th><td><span class='tag-ok'>ok</span></td></tr>
+  </table>
+  <h3>Alerts</h3>
+  <table><thead><tr><th>Severity</th><th>Type</th><th>Message</th></tr></thead><tbody><tr><td>WARNING</td><td>validation</td><td>Missing above threshold: ['monthly_charges', 'total_charges', 'num_active_services']</td></tr></tbody></table>
+</section>
+<section class="batch">
+  <h2 id="current_batch_numeric_drift">current_batch_numeric_drift.csv</h2>
+  <p><strong>Overall status:</strong> <span class="tag-critical">critical</span>
+ · <strong>Decision (system):</strong> CRITICAL
+ · <strong>Alerts:</strong> 1</p>
+  <p class='muted'>Batch 4 of 5 · Generated (UTC): 2026-03-25T02:35:55+00:00 · File: data\current\current_batch_numeric_drift.csv</p>
+  <h3>Severity overview</h3>
+  <p><strong>Worst alert level:</strong> 
+CRITICAL
+ · Counts: CRITICAL=1, WARNING=0, INFO=0</p>
+  <p class='muted'>Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise.</p>
+  <h3>Decision summary</h3>
+  <p><strong>Primary issues</strong></p>
+  <ul><li>[CRITICAL] High drift count: 2</li></ul>
+  <p><strong>Recommended actions</strong></p>
+  <ul><li>Investigate high-drift features vs the reference window: check definitions, ingestion, and whether the cohort mix changed materially.</li></ul>
+  <h3>Layer status (validation / drift / prediction)</h3>
+  <table class='compact'>
+    <tr><th>Validation</th><td><span class='tag-ok'>ok</span></td></tr>
+    <tr><th>Drift</th><td><span class='tag-critical'>critical</span></td></tr>
+    <tr><th>Prediction monitoring</th><td><span class='tag-ok'>ok</span></td></tr>
+  </table>
+  <h3>Alerts</h3>
+  <table><thead><tr><th>Severity</th><th>Type</th><th>Message</th></tr></thead><tbody><tr><td>CRITICAL</td><td>drift</td><td>High drift count: 2</td></tr></tbody></table>
+</section>
+<section class="batch">
+  <h2 id="current_batch_prediction_shift">current_batch_prediction_shift.csv</h2>
+  <p><strong>Overall status:</strong> <span class="tag-critical">critical</span>
+ · <strong>Decision (system):</strong> CRITICAL
+ · <strong>Alerts:</strong> 2</p>
+  <p class='muted'>Batch 5 of 5 · Generated (UTC): 2026-03-25T02:35:55+00:00 · File: data\current\current_batch_prediction_shift.csv</p>
+  <h3>Severity overview</h3>
+  <p><strong>Worst alert level:</strong> 
+CRITICAL
+ · Counts: CRITICAL=2, WARNING=0, INFO=0</p>
+  <p class='muted'>Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise.</p>
+  <h3>Decision summary</h3>
+  <p><strong>Primary issues</strong></p>
+  <ul><li>[CRITICAL] High drift count: 1</li><li>[CRITICAL] Score or positive rate shift critical</li></ul>
+  <p><strong>Recommended actions</strong></p>
+  <ul><li>Investigate high-drift features vs the reference window: check definitions, ingestion, and whether the cohort mix changed materially.</li><li>Review model calibration and business thresholds; plan validation, rollback, or refresh if score or positive-rate shift persists.</li></ul>
+  <h3>Layer status (validation / drift / prediction)</h3>
+  <table class='compact'>
+    <tr><th>Validation</th><td><span class='tag-ok'>ok</span></td></tr>
+    <tr><th>Drift</th><td><span class='tag-critical'>critical</span></td></tr>
+    <tr><th>Prediction monitoring</th><td><span class='tag-critical'>critical</span></td></tr>
+  </table>
+  <h3>Alerts</h3>
+  <table><thead><tr><th>Severity</th><th>Type</th><th>Message</th></tr></thead><tbody><tr><td>CRITICAL</td><td>drift</td><td>High drift count: 1</td></tr><tr><td>CRITICAL</td><td>prediction_monitoring</td><td>Score or positive rate shift critical</td></tr></tbody></table>
+</section>
+
+  <footer>
+    Generated as static HTML by the monitoring pipeline. No external assets.
+    Run ID: 6aa5b91a-5e21-470c-bd3c-f0f253fd217c · Pipeline: 1.1.0
+  </footer>
+</body>
+</html>

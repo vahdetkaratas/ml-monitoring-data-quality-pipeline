@@ -1,0 +1,52 @@
+{
+  "batch_name": "current_batch_prediction_shift.csv",
+  "overall_status": "critical",
+  "summary": {
+    "validation_status": "ok",
+    "drift_status": "critical",
+    "prediction_monitoring_status": "critical"
+  },
+  "alert_count": 2,
+  "alerts": [
+    {
+      "type": "drift",
+      "severity": "CRITICAL",
+      "message": "High drift count: 1"
+    },
+    {
+      "type": "prediction_monitoring",
+      "severity": "CRITICAL",
+      "message": "Score or positive rate shift critical"
+    }
+  ],
+  "decision_summary": {
+    "system_status": "CRITICAL",
+    "severity_overview": {
+      "highest_alert_severity": "CRITICAL",
+      "counts": {
+        "CRITICAL": 2,
+        "WARNING": 0,
+        "INFO": 0
+      },
+      "attention_priority": "Address CRITICAL alerts first (block or escalate), then WARNING (triage and fix). INFO is contextual only unless your runbook says otherwise."
+    },
+    "primary_issues": [
+      "[CRITICAL] High drift count: 1",
+      "[CRITICAL] Score or positive rate shift critical"
+    ],
+    "recommended_actions": [
+      "Investigate high-drift features vs the reference window: check definitions, ingestion, and whether the cohort mix changed materially.",
+      "Review model calibration and business thresholds; plan validation, rollback, or refresh if score or positive-rate shift persists."
+    ]
+  },
+  "run_metadata": {
+    "run_id": "6aa5b91a-5e21-470c-bd3c-f0f253fd217c",
+    "generated_at": "2026-03-25T02:35:55+00:00",
+    "n_batches": 5,
+    "batch_index": 5,
+    "schema_version": "1.0",
+    "pipeline_version": "1.1.0",
+    "reference_dataset": "data\\reference\\reference_dataset.csv",
+    "current_batch_file": "data\\current\\current_batch_prediction_shift.csv"
+  }
+}

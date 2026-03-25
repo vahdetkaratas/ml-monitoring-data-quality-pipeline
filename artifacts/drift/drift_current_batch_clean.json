@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "high_count": 0,
+  "medium_count": 0,
+  "per_column": {
+    "tenure": {
+      "psi": 0.0135,
+      "ks_statistic": 0.0403,
+      "ks_pvalue": 0.4797,
+      "severity": "none"
+    },
+    "monthly_charges": {
+      "psi": 0.0212,
+      "ks_statistic": 0.0313,
+      "ks_pvalue": 0.7855,
+      "severity": "none"
+    },
+    "total_charges": {
+      "psi": 0.0107,
+      "ks_statistic": 0.028,
+      "ks_pvalue": 0.8833,
+      "severity": "none"
+    },
+    "num_active_services": {
+      "psi": 0.0147,
+      "ks_statistic": 0.0177,
+      "ks_pvalue": 0.9991,
+      "severity": "none"
+    },
+    "senior_citizen": {
+      "psi": 0.0021,
+      "ks_statistic": 0.023,
+      "ks_pvalue": 0.9745,
+      "severity": "none"
+    },
+    "churn_score": {
+      "psi": 0.0154,
+      "ks_statistic": 0.0393,
+      "ks_pvalue": 0.5122,
+      "severity": "none"
+    },
+    "contract": {
+      "psi": 0.0015,
+      "unseen_count": 0,
+      "severity": "none"
+    },
+    "internet_service": {
+      "psi": 0.0025,
+      "unseen_count": 0,
+      "severity": "none"
+    },
+    "payment_method": {
+      "psi": 0.0083,
+      "unseen_count": 0,
+      "severity": "none"
+    }
+  }
+}

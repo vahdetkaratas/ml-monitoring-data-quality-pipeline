@@ -1,0 +1,6 @@
+batch_name,overall_status,validation_status,drift_status,prediction_monitoring_status,alert_count
+current_batch_categorical_shift.csv,critical,ok,critical,ok,1
+current_batch_clean.csv,ok,ok,ok,ok,0
+current_batch_missing.csv,warning,warning,ok,ok,1
+current_batch_numeric_drift.csv,critical,ok,critical,ok,1
+current_batch_prediction_shift.csv,critical,ok,critical,critical,2
