@@ -86,7 +86,3 @@ python -m pytest tests -q
 ```
 
 Same suite runs on **GitHub Actions** for pushes and pull requests to `main`.
-
-## Documentation
-
-Design notes and milestones live under **`docs/`** in a full checkout; that directory is **not** part of the published GitHub tree (see `.gitignore`). The **README** and **code** are the source of truth on GitHub.
