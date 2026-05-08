@@ -203,7 +203,6 @@ async function main() {
     )
     .replaceAll("{{LOGO_LINE_1}}", escapeHtml(logo1))
     .replaceAll("{{LOGO_LINE_2}}", escapeHtml(logo2))
-    .replaceAll("{{NAV_BUTTONS}}", ctaButtons(project.projectLinks || []))
     .replaceAll(
       "{{PROJECT_EYEBROW}}",
       escapeHtml(project.eyebrow || "Technical artifact")
