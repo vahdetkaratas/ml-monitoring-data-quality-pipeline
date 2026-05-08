@@ -8,7 +8,7 @@ Batch monitoring demo for **tabular** scoring data: validate incoming CSV batche
 
 **Interactive viewer (portfolio / recruiter):** [monitoring.vahdetkaratas.com](https://monitoring.vahdetkaratas.com/)
 
-**Commercial introduction (static shell):** [ml-monitoring.vahdetkaratas.com](https://ml-monitoring.vahdetkaratas.com/)
+**VahdetLabs commercial shell (static):** deploy `layout-shell-commercial/` to your **`*.vahdetlabs.com`** property only — this build intentionally contains **no `vahdetkaratas.com` navigation**.
 
 **Streamlit demo (VahdetLabs):** [ml-monitoring.vahdetlabs.com](https://ml-monitoring.vahdetlabs.com/)
 
@@ -20,7 +20,7 @@ To refresh this screenshot: `pip install playwright`, `playwright install chromi
 
 ## Static overview shells (dual-brand)
 
-Optional static shells are rendered from `shell/` into `layout-shell/` (recruiter framing) and `layout-shell-commercial/` (**commercial** framing); deploy the commercial build to **`ml-monitoring.vahdetkaratas.com`**. The Labs Streamlit app is hosted separately at **`ml-monitoring.vahdetlabs.com`**. Recruiter Streamlit viewer (portfolio): **`monitoring.vahdetkaratas.com`**.
+Optional static shells: `layout-shell/` (**recruiter** framing, portfolio-side hosts only) and `layout-shell-commercial/` (**VahdetLabs** framing — **labs hosts only**, no cross-links to `vahdetkaratas.com`). Labs Streamlit: **`ml-monitoring.vahdetlabs.com`**. Portfolio/recruiter Streamlit: **`monitoring.vahdetkaratas.com`**.
 
 ## What this is
 

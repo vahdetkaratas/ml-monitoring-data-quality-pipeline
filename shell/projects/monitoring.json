@@ -163,8 +163,8 @@
       "pageTitle": "ML monitoring & data quality — VahdetLabs capability overview",
       "eyebrow": "Operational risk visibility — pilot scope",
       "summary": "Silent schema drift and shifting score distributions erode model trust before KPIs move. This reference pipeline shows how batch validation, drift signals, and structured alerts surface degradation early — scoped for pilots and integration workshops, not as a hosted SaaS.",
-      "metaDescription": "Commercial ML monitoring overview on `ml-monitoring.vahdetkaratas.com`; interactive Streamlit demo on VahdetLabs (`ml-monitoring.vahdetlabs.com`) — batch validation, drift signals, alerts, read-only artefacts.",
-      "heroNote": "This shell is the commercial introduction site (`ml-monitoring.vahdetkaratas.com`). The Streamlit demo runs separately on **`ml-monitoring.vahdetlabs.com`** — same packaged batch artefacts, no inference API.",
+      "metaDescription": "VahdetLabs ML monitoring capability overview — batch validation, drift visibility (PSI/KS), alerts, governance-ready artefacts; interactive Streamlit exploration at ml-monitoring.vahdetlabs.com — read-only, no inference API.",
+      "heroNote": "VahdetLabs-hosted overview. Charts and drill-down live in the Streamlit workspace at **`ml-monitoring.vahdetlabs.com`** — packaged artefacts only, not an inference API.",
       "footerProjectSub": "Pilot-friendly monitoring slice · validation · drift · reporting",
       "stack": ["Python", "pandas", "pytest", "Streamlit", "JSON & HTML reports"],
       "projectLinks": [
@@ -182,11 +182,6 @@
           "label": "VahdetLabs home",
           "href": "https://vahdetlabs.com/",
           "external": true
-        },
-        {
-          "label": "Reference implementation",
-          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
-          "external": true
         }
       ],
       "reviewLinks": [
@@ -203,11 +198,6 @@
         {
           "label": "VahdetLabs services",
           "href": "https://vahdetlabs.com/",
-          "external": true
-        },
-        {
-          "label": "Technical README",
-          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md",
           "external": true
         }
       ],
@@ -230,11 +220,6 @@
         {
           "label": "Vahdetlabs",
           "href": "https://vahdetlabs.com/",
-          "external": true
-        },
-        {
-          "label": "Commercial overview",
-          "href": "https://ml-monitoring.vahdetkaratas.com/",
           "external": true
         },
         {

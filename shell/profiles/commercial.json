@@ -21,9 +21,9 @@
       "iconClass": "fas fa-globe"
     },
     {
-      "label": "Project source",
-      "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
-      "iconClass": "fab fa-github"
+      "label": "Contact",
+      "href": "https://vahdetlabs.com/contact",
+      "iconClass": "fas fa-envelope"
     }
   ]
 }

@@ -6,10 +6,10 @@ This folder builds **recruiter** and **commercial** static shells for the ML mon
 
 | Profile | Output directory | Intended host |
 |--------|------------------|---------------|
-| `recruiter` | `layout-shell/` | project-specific (often portfolio subdomain on karatas) |
-| `commercial` | `layout-shell-commercial/` | **`ml-monitoring.vahdetkaratas.com`** (commercial introduction) |
+| `recruiter` | `layout-shell/` | karatas / portfolio-side host only |
+| `commercial` | `layout-shell-commercial/` | **`*.vahdetlabs.com` only** (no `vahdetkaratas.com` URLs inside this build) |
 
-Labs Streamlit demo only: **`ml-monitoring.vahdetlabs.com`**. Portfolio/recruiter Streamlit (when used): **`monitoring.vahdetkaratas.com`**. Shell builds contain **no FastAPI**.
+Labs Streamlit demo: **`ml-monitoring.vahdetlabs.com`**. Portfolio/recruiter Streamlit (when used): **`monitoring.vahdetkaratas.com`**. Shell builds contain **no FastAPI**.
 
 ## Files
 
@@ -46,10 +46,9 @@ node shell/render-shell.mjs \
 
 Outputs include `index.html`, copied CSS/JS, `favicon.svg`, `avatar-vk.svg` (shared VK monogram avatar), and embedded `profile.json` for debugging.
 
-**Commercial static host:** **`https://ml-monitoring.vahdetkaratas.com/`** (`layout-shell-commercial`). **Labs Streamlit demo:** **`https://ml-monitoring.vahdetlabs.com/`** — separate subdomain from the intro page.
+**Brand separation:** the **`commercial`** render must stay on **VahdetLabs** links only (`vahdetlabs.com`, `*.vahdetlabs.com`). Do not add portfolio / `vahdetkaratas.com` URLs to `profiles.commercial`, `monitoring.json` → `profiles.commercial`, or `monitoring-commercial.html`.
 
 ## Rules enforced in this adaptation
 
-- Commercial shell deploy targets **`ml-monitoring.vahdetkaratas.com`**; Labs Streamlit uses **`ml-monitoring.vahdetlabs.com`**. Recruiter and commercial share **`avatar-vk.svg`**.
-- Recruiter profile references **`monitoring.vahdetkaratas.com`** Streamlit and portfolio URLs as needed.
+- **`commercial`** shell: labs-only outbound links; **`recruiter`** shell may use portfolio / `vahdetkaratas.com` where appropriate.
 - Shared template uses neutral `.shell-project-page` / `.shell-project-footer` classes — no RAG-specific naming.
