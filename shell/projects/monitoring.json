@@ -1,0 +1,150 @@
+{
+  "pageTitle": "ML monitoring & data quality pipeline",
+  "title": "Batch ML monitoring & data quality",
+  "eyebrow": "Technical artifact — offline pipeline",
+  "summary": "Reference-backed validation and drift checks on incoming tabular batches, with structured alerts and reproducible JSON/HTML artifacts.",
+  "metaDescription": "Batch ML monitoring demo: schema validation, PSI/KS drift, prediction monitoring, alerts, CSV/HTML reports, optional Streamlit viewer.",
+  "heroTitle": "Batch ML monitoring & data quality pipeline",
+  "logoLine1": "ML",
+  "logoLine2": "Monitoring",
+  "themeColor": "#0a0c10",
+  "footerProjectName": "ML monitoring & data quality",
+  "footerProjectSub": "Python pipeline · validation · drift · reports",
+  "heroNote": "Runs offline from CSV batches and emits artifacts under artifacts/. An optional Streamlit app reads those files for exploration — there is no inference API in this repository.",
+  "stack": ["Python", "pandas", "pytest", "Streamlit", "matplotlib"],
+  "projectLinks": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
+      "external": true
+    },
+    {
+      "label": "Streamlit viewer",
+      "href": "https://monitoring.vahdetkaratas.com/",
+      "external": true
+    },
+    {
+      "label": "Sample HTML report",
+      "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/artifacts/reports/monitoring_run_report.html",
+      "external": true
+    }
+  ],
+  "reviewLinks": [
+    {
+      "label": "GitHub repository",
+      "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
+      "external": true
+    },
+    {
+      "label": "Streamlit viewer",
+      "href": "https://monitoring.vahdetkaratas.com/",
+      "external": true
+    },
+    {
+      "label": "README — run locally",
+      "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md",
+      "external": true
+    }
+  ],
+  "relatedMlSystems": [],
+  "relatedDataTools": [],
+  "limitations": [
+    "Single-machine batch demo — not streaming or multi-tenant observability.",
+    "Uses packaged CSV scenarios and committed artifacts for reproducibility.",
+    "No live scoring API; monitoring runs after batches land."
+  ],
+  "profiles": {
+    "recruiter": {
+      "pageTitle": "ML monitoring & data quality — applied ML engineering",
+      "eyebrow": "Proof-of-work — batch monitoring pipeline",
+      "summary": "I validate incoming tabular batches against a JSON schema, compare them to a frozen reference window (numeric PSI/KS, categorical drift), monitor prediction behaviour, and emit machine-readable reports plus a static HTML roll-up. CI exercises the same logic with pytest.",
+      "heroNote": "Artifacts are produced by `run_full_monitoring`; the hosted Streamlit viewer is read-only over those files — not a production observability stack.",
+      "footerProjectSub": "Batch validation · drift · prediction checks · tested pipeline",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
+          "external": true
+        },
+        {
+          "label": "Streamlit viewer",
+          "href": "https://monitoring.vahdetkaratas.com/",
+          "external": true
+        },
+        {
+          "label": "Sample HTML report",
+          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/artifacts/reports/monitoring_run_report.html",
+          "external": true
+        }
+      ],
+      "reviewLinks": [
+        {
+          "label": "GitHub repository",
+          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
+          "external": true
+        },
+        {
+          "label": "Streamlit viewer",
+          "href": "https://monitoring.vahdetkaratas.com/",
+          "external": true
+        },
+        {
+          "label": "README — reproduce locally",
+          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md",
+          "external": true
+        }
+      ],
+      "limitations": [
+        "Demonstrates engineering judgement on monitoring layers — not an enterprise APM or feature store.",
+        "Offline batch flow only; no online inference or auto-remediation.",
+        "Synthetic reference/current splits committed for reproducible review."
+      ]
+    },
+    "commercial": {
+      "pageTitle": "ML monitoring & data quality — VahdetLabs capability overview",
+      "eyebrow": "Operational risk visibility — pilot scope",
+      "summary": "Silent schema drift and shifting score distributions erode model trust before KPIs move. This reference pipeline shows how batch validation, drift signals, and structured alerts surface degradation early — scoped for pilots and integration workshops, not as a hosted SaaS.",
+      "heroNote": "Static overview page. Pilot engagements adapt connectors, schemas, and thresholds to your batch feeds — without implying full-stack observability.",
+      "footerProjectSub": "Pilot-friendly monitoring slice · validation · drift · reporting",
+      "projectLinks": [
+        {
+          "label": "Discuss a pilot",
+          "href": "https://vahdetlabs.com/contact",
+          "external": true
+        },
+        {
+          "label": "VahdetLabs home",
+          "href": "https://vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Reference implementation",
+          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
+          "external": true
+        }
+      ],
+      "reviewLinks": [
+        {
+          "label": "Book an intro call",
+          "href": "https://vahdetlabs.com/contact",
+          "external": true
+        },
+        {
+          "label": "VahdetLabs services",
+          "href": "https://vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Technical README",
+          "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md",
+          "external": true
+        }
+      ],
+      "limitations": [
+        "Not a multi-tenant SaaS product — a bounded monitoring slice for scoped delivery.",
+        "Assumes batch drops you control; streaming or real-time scoring needs separate design.",
+        "Thresholds and schemas are agreement artefacts — tuned per engagement."
+      ]
+    }
+  }
+}

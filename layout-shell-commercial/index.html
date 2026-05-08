@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Batch ML monitoring demo: schema validation, PSI/KS drift, prediction monitoring, alerts, CSV/HTML reports, optional Streamlit viewer.">
+  <meta name="theme-color" content="#0a0c10">
+  <title>ML monitoring &amp; data quality — VahdetLabs capability overview</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="shell.css">
+  <link rel="stylesheet" href="demo-content.css">
+</head>
+<body>
+  <div class="shell-outer">
+    <div class="shell-card">
+      <div class="art-info-bar">
+        <div class="art-info-bar-frame">
+          <div class="art-info-bar-header">
+            <button type="button" class="art-info-bar-btn" aria-label="Toggle info" aria-expanded="false">
+              <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="art-header">
+            <div class="art-avatar">
+              <a href="https://vahdetlabs.com/" class="art-avatar-curtain">
+                <img src="avatar-commercial.svg" alt="VahdetLabs" width="90" height="90">
+                <i class="fas fa-expand" aria-hidden="true"></i>
+              </a>
+              <div class="art-lamp-light">
+                <div class="art-available-lamp"></div>
+              </div>
+            </div>
+            <h5 class="art-name mb-10"><a href="https://vahdetlabs.com/">VahdetLabs</a></h5>
+            <div class="art-sm-text">ML systems delivery — validation, drift visibility, and reliability engineering</div>
+            <div class="art-sm-text art-muted mb-10">Scoped pilots for batch monitoring and operational readiness — not a SaaS platform.</div>
+          </div>
+
+          <div id="scrollbar2" class="art-scroll-frame">
+            <div class="art-table p-15-15">
+              <ul>
+                <li><h6>Location:</h6><span>Prague, Czech Republic</span></li>
+              </ul>
+            </div>
+
+            <div class="art-ls-divider"></div>
+
+            <div class="art-knowledge-block p-30-15">
+              <h6 class="mb-15">Technical focus</h6>
+              <ul class="art-knowledge-list p-15-0">
+                <li>Batch data validation against contracts</li>
+<li>Population drift checks (PSI / KS)</li>
+<li>Score and label stability monitoring</li>
+<li>Structured alerts and run reports</li>
+<li>Pilot rollout and integration paths</li>
+              </ul>
+            </div>
+
+            <div class="art-knowledge-block p-30-15">
+              <h6 class="mb-15">Next steps</h6>
+              <ul class="art-knowledge-list p-15-0">
+                <li><a href="https://vahdetlabs.com/contact" target="_blank" rel="noopener noreferrer">Book an intro call</a></li>
+<li><a href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">VahdetLabs services</a></li>
+<li><a href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md" target="_blank" rel="noopener noreferrer">Technical README</a></li>
+              </ul>
+            </div>
+
+            
+          </div>
+
+          <div class="art-ls-social">
+            <a href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer" title="VahdetLabs site" aria-label="VahdetLabs site"><i class="fas fa-globe" aria-hidden="true"></i></a>
+<a href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer" title="Project source" aria-label="Project source"><i class="fab fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shell-main-wrap" id="shellMainWrap">
+        <div class="shell-mobile-curtain" id="shellMobileCurtain" aria-hidden="true"></div>
+        <div class="shell-main">
+          <main class="shell-scroll" id="shellScroll">
+            <div class="shell-content" id="projectContent">
+              <div class="shell-project-page">
+                <a class="skip" href="#main">Skip to content</a>
+
+                <div class="wrap">
+                  <header>
+                    <div class="logo" id="top">ML <span>Monitoring</span></div>
+                    <div class="nav-actions">
+                      <a class="btn btn-primary" href="https://vahdetlabs.com/contact" target="_blank" rel="noopener noreferrer">Discuss a pilot</a>
+<a class="btn btn-ghost" href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">VahdetLabs home</a>
+<a class="btn btn-ghost" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer">Reference implementation</a>
+                    </div>
+                  </header>
+
+                  <div id="main">
+                    <section class="hero">
+                      <span class="hero-badge">Operational risk visibility — pilot scope</span>
+                      <h1>Batch ML monitoring &amp; data quality pipeline</h1>
+                      <p class="hero-lead">Silent schema drift and shifting score distributions erode model trust before KPIs move. This reference pipeline shows how batch validation, drift signals, and structured alerts surface degradation early — scoped for pilots and integration workshops, not as a hosted SaaS.</p>
+                      <div class="hero-cta">
+                        <a class="btn btn-primary" href="https://vahdetlabs.com/contact" target="_blank" rel="noopener noreferrer">Discuss a pilot</a>
+<a class="btn btn-ghost" href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">VahdetLabs home</a>
+<a class="btn btn-ghost" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer">Reference implementation</a>
+                      </div>
+                      <p class="hero-note">Static overview page. Pilot engagements adapt connectors, schemas, and thresholds to your batch feeds — without implying full-stack observability.</p>
+                      <div class="metrics" aria-label="Project facts">
+                        <div><span>Python</span></div>
+<div><span>pandas</span></div>
+<div><span>pytest</span></div>
+<div><span>Streamlit</span></div>
+                      </div>
+                    </section>
+
+                    <section id="scope" aria-labelledby="h-scope"><h2 id="h-scope">Limitations &amp; scope</h2><div class="pitch"><ul><li>Not a multi-tenant SaaS product — a bounded monitoring slice for scoped delivery.</li>
+<li>Assumes batch drops you control; streaming or real-time scoring needs separate design.</li>
+<li>Thresholds and schemas are agreement artefacts — tuned per engagement.</li></ul></div></section>
+
+                    <section class="proj-section">
+  <h2 id="h-risk">Why this matters</h2>
+  <p class="proj-section-intro">
+    Models rarely fail loudly — contracts loosen, upstream feeds drift, and score distributions creep while aggregate dashboards still look stable.
+    The gap between “technically running” and “still trustworthy” is where operational risk hides. Batch monitoring makes that gap visible before leadership reviews freeze or regulators ask questions.
+  </p>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-pilot">What a pilot delivers</h2>
+  <ol class="proj-steps">
+    <li class="proj-step">
+      <div class="proj-step-num">1</div>
+      <div>
+        <p class="proj-step-title">Contract &amp; ownership</p>
+        <div class="proj-step-body">
+          <p>Align on the columns that define acceptable batches, who signs off on schema changes, and where golden reference windows live.</p>
+        </div>
+      </div>
+    </li>
+    <li class="proj-step">
+      <div class="proj-step-num">2</div>
+      <div>
+        <p class="proj-step-title">Monitoring signals</p>
+        <div class="proj-step-body">
+          <p>Validation gates plus drift metrics (PSI / KS, categorical shifts) and tailored thresholds tuned to your risk posture.</p>
+        </div>
+      </div>
+    </li>
+    <li class="proj-step">
+      <div class="proj-step-num">3</div>
+      <div>
+        <p class="proj-step-title">Review artefacts</p>
+        <div class="proj-step-body">
+          <p>Structured alerts, JSON audit payloads, CSV roll-ups, and narrative HTML summaries your governance forums can consume.</p>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-covered">What stays in scope</h2>
+  <div class="proj-card-grid">
+    <article class="proj-card">
+      <h3 class="proj-card-title">Tabular batch feeds</h3>
+      <p>Incoming files that map cleanly to a documented schema — ideal for weekly scoring extracts or warehouse snapshots.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Early warning</h3>
+      <p>Signals surface before downstream BI narratives pick up the shift — focused on trust and readiness, not vanity dashboard polish.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Integration-ready outputs</h3>
+      <p>Machine-readable bundles hook into ticketing, notebooks, or internal portals without forcing a proprietary SaaS UI.</p>
+    </article>
+  </div>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-review">How teams review results</h2>
+  <p class="proj-section-intro">
+    Decision summaries bubble up severity-ranked alerts while analysts can drill into per-column drift JSON when remediation requires nuance.
+    Optional lightweight viewers can attach to the same outputs when stakeholders prefer charts over raw logs — always anchored on immutable batch artefacts.
+  </p>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-clarity">What this is not</h2>
+  <ul class="proj-tech-list">
+    <li>Not a subscription observability suite — engagements stay bounded and integration-aware.</li>
+    <li>Not online inference hosting — the slice focuses on batch accountability once data lands.</li>
+    <li>Not a replacement for broader ML platforms — it complements them with disciplined validation and drift hygiene.</li>
+  </ul>
+</section>
+
+                  </div>
+
+                  <footer class="shell-project-footer">
+                    <p class="name">ML monitoring &amp; data quality</p>
+                    <p style="margin:0.35rem 0 0;font-size:0.76rem;">Pilot-friendly monitoring slice · validation · drift · reporting</p>
+                  </footer>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid p-30-0">
+              <footer class="footer">
+                <div class="art-copy">© <span id="shellYear"></span> VahdetLabs. All rights reserved.</div>
+                <div class="footer-developer">Operational ML monitoring and data-quality assurance for delivery teams.</div>
+              </footer>
+            </div>
+          </main>
+        </div>
+
+        <aside class="shell-rail" aria-label="Home">
+          <div class="shell-rail-header">
+            <a class="shell-rail-home" href="https://vahdetlabs.com/" id="shellHomeLink" title="Home" aria-label="Home">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="shell-rail-home-icon">
+                <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="shell-rail-spacer" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<section class="proj-section">
+  <h2 id="h-arch">Pipeline architecture</h2>
+  <p class="proj-section-intro">
+    Each incoming CSV batch runs through validation against <code>data/metadata/schema_definition.json</code>, drift estimation versus the frozen reference window,
+    and optional prediction-behaviour checks. Outputs land under <code>artifacts/reports/</code> and <code>artifacts/drift/</code> for programmatic inspection or dashboards.
+  </p>
+  <div class="proj-arch-visual" aria-hidden="true">
+    <span class="proj-arch-node">Incoming CSV</span><span class="proj-arch-arrow">→</span>
+    <span class="proj-arch-node">Schema validation</span><span class="proj-arch-arrow">→</span>
+    <span class="proj-arch-node">Drift &amp; prediction summary</span><span class="proj-arch-arrow">→</span>
+    <span class="proj-arch-node">Alerts &amp; reports</span>
+  </div>
+  <p class="proj-arch-caption">
+    Orchestration lives in <code>python -m src.pipeline.run_full_monitoring</code>. Simulation helpers regenerate deterministic datasets when needed.
+  </p>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-metrics">What gets measured</h2>
+  <div class="proj-card-grid">
+    <article class="proj-card">
+      <h3 class="proj-card-title">Validation layer</h3>
+      <p>Required columns, dtypes, numeric ranges, categorical domains, and missing-value policies.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Drift layer</h3>
+      <p>Population stability (PSI), Kolmogorov–Smirnov on numeric columns, and categorical shift summaries vs reference.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Prediction monitoring</h3>
+      <p>Distribution checks on model scores and derived labels when present — highlighting silent shifts before downstream KPIs react.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Alerting &amp; narratives</h3>
+      <p>Rule metadata surfaces in JSON reports; decision summaries consolidate severity for reviewers.</p>
+    </article>
+  </div>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-artifacts">Generated artifacts</h2>
+  <ul class="proj-tech-list">
+    <li><strong>report_<em>batch</em>.json</strong> — validation, drift roll-ups, prediction slice, alerts.</li>
+    <li><strong>drift_<em>batch</em>.json</strong> — per-column drift metrics for audit trails.</li>
+    <li><strong>monitoring_overview.csv</strong> — batch-level status matrix across the last run.</li>
+    <li><strong>monitoring_run_report.html</strong> — static HTML digest produced alongside JSON.</li>
+  </ul>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-streamlit">Streamlit viewer</h2>
+  <p class="proj-section-intro">
+    The hosted Streamlit page reads the committed artifacts only — select a batch, inspect alerts, drift tables, and score histograms without recomputing metrics server-side.
+    Treat it as an exploration aid for reviewers, not an online scoring tier.
+  </p>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-quality">Reproducibility &amp; tests</h2>
+  <p class="proj-section-intro">
+    Pytest covers drift math, alert thresholds, simulations, and exporters so changes stay grounded. GitHub Actions installs <code>requirements.txt</code> and runs the suite on each push to <code>main</code>.
+  </p>
+</section>

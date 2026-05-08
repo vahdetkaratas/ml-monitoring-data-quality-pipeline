@@ -14,6 +14,10 @@ Streamlit is the **interactive** UI (batch selection, status, alerts, charts). T
 
 To refresh this screenshot: `pip install playwright`, `playwright install chromium`, then `python scripts/capture_streamlit_screenshot.py` (optional: `STREAMLIT_DEMO_URL`).
 
+## Static overview shells (dual-brand)
+
+Optional recruiter/commercial landing pages are rendered from `shell/` into `layout-shell/` and `layout-shell-commercial/` (commands in `shell/README.md`). Typical hosts: **ml-monitoring.vahdetkaratas.com** (recruiter) and **ml-monitoring.vahdetlabs.com** (commercial). These are static HTML only; the Streamlit viewer above stays separate.
+
 ## What this is
 
 - A **Python pipeline** you run locally: CSV in → reports under `artifacts/`.

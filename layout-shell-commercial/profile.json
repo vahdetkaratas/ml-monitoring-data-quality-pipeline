@@ -1,0 +1,30 @@
+{
+  "name": "VahdetLabs",
+  "identity": "ML systems delivery — validation, drift visibility, and reliability engineering",
+  "identitySub": "Scoped pilots for batch monitoring and operational readiness — not a SaaS platform.",
+  "location": "Prague, Czech Republic",
+  "portfolioUrl": "https://vahdetlabs.com/",
+  "avatarUrl": "avatar-commercial.svg",
+  "technicalFocus": [
+    "Batch data validation against contracts",
+    "Population drift checks (PSI / KS)",
+    "Score and label stability monitoring",
+    "Structured alerts and run reports",
+    "Pilot rollout and integration paths"
+  ],
+  "reviewSectionTitle": "Next steps",
+  "footerLabel": "Commercial capability overview",
+  "footerTagline": "Operational ML monitoring and data-quality assurance for delivery teams.",
+  "socialLinks": [
+    {
+      "label": "VahdetLabs site",
+      "href": "https://vahdetlabs.com/",
+      "iconClass": "fas fa-globe"
+    },
+    {
+      "label": "Project source",
+      "href": "https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline",
+      "iconClass": "fab fa-github"
+    }
+  ]
+}

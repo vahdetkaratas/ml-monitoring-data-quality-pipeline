@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Batch ML monitoring demo: schema validation, PSI/KS drift, prediction monitoring, alerts, CSV/HTML reports, optional Streamlit viewer.">
+  <meta name="theme-color" content="#0a0c10">
+  <title>ML monitoring &amp; data quality — applied ML engineering</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="shell.css">
+  <link rel="stylesheet" href="demo-content.css">
+</head>
+<body>
+  <div class="shell-outer">
+    <div class="shell-card">
+      <div class="art-info-bar">
+        <div class="art-info-bar-frame">
+          <div class="art-info-bar-header">
+            <button type="button" class="art-info-bar-btn" aria-label="Toggle info" aria-expanded="false">
+              <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="art-header">
+            <div class="art-avatar">
+              <a href="https://vahdetkaratas.com/" class="art-avatar-curtain">
+                <img src="https://vahdetkaratas.com/img/face-1.jpg" alt="Vahdettin Karatas" width="90" height="90">
+                <i class="fas fa-expand" aria-hidden="true"></i>
+              </a>
+              <div class="art-lamp-light">
+                <div class="art-available-lamp"></div>
+              </div>
+            </div>
+            <h5 class="art-name mb-10"><a href="https://vahdetkaratas.com/">Vahdettin Karatas</a></h5>
+            <div class="art-sm-text">Applied ML engineer — batch pipelines, validation, drift monitoring, reproducible reporting</div>
+            
+          </div>
+
+          <div id="scrollbar2" class="art-scroll-frame">
+            <div class="art-table p-15-15">
+              <ul>
+                <li><h6>Location:</h6><span>Prague, Czech Republic</span></li>
+              </ul>
+            </div>
+
+            <div class="art-ls-divider"></div>
+
+            <div class="art-knowledge-block p-30-15">
+              <h6 class="mb-15">Technical focus</h6>
+              <ul class="art-knowledge-list p-15-0">
+                <li>Tabular batch monitoring</li>
+<li>Schema validation and data-quality gates</li>
+<li>Drift metrics (PSI, KS, categorical shifts)</li>
+<li>Prediction and score distribution checks</li>
+<li>Automated reports and pytest-backed pipelines</li>
+              </ul>
+            </div>
+
+            <div class="art-knowledge-block p-30-15">
+              <h6 class="mb-15">Review this project</h6>
+              <ul class="art-knowledge-list p-15-0">
+                <li><a href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer">GitHub repository</a></li>
+<li><a href="https://monitoring.vahdetkaratas.com/" target="_blank" rel="noopener noreferrer">Streamlit viewer</a></li>
+<li><a href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md" target="_blank" rel="noopener noreferrer">README — reproduce locally</a></li>
+              </ul>
+            </div>
+
+            
+          </div>
+
+          <div class="art-ls-social">
+            <a href="https://github.com/vahdetkaratas" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/vahdetkaratas" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shell-main-wrap" id="shellMainWrap">
+        <div class="shell-mobile-curtain" id="shellMobileCurtain" aria-hidden="true"></div>
+        <div class="shell-main">
+          <main class="shell-scroll" id="shellScroll">
+            <div class="shell-content" id="projectContent">
+              <div class="shell-project-page">
+                <a class="skip" href="#main">Skip to content</a>
+
+                <div class="wrap">
+                  <header>
+                    <div class="logo" id="top">ML <span>Monitoring</span></div>
+                    <div class="nav-actions">
+                      <a class="btn btn-primary" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+<a class="btn btn-ghost" href="https://monitoring.vahdetkaratas.com/" target="_blank" rel="noopener noreferrer">Streamlit viewer</a>
+<a class="btn btn-ghost" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/artifacts/reports/monitoring_run_report.html" target="_blank" rel="noopener noreferrer">Sample HTML report</a>
+                    </div>
+                  </header>
+
+                  <div id="main">
+                    <section class="hero">
+                      <span class="hero-badge">Proof-of-work — batch monitoring pipeline</span>
+                      <h1>Batch ML monitoring &amp; data quality pipeline</h1>
+                      <p class="hero-lead">I validate incoming tabular batches against a JSON schema, compare them to a frozen reference window (numeric PSI/KS, categorical drift), monitor prediction behaviour, and emit machine-readable reports plus a static HTML roll-up. CI exercises the same logic with pytest.</p>
+                      <div class="hero-cta">
+                        <a class="btn btn-primary" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+<a class="btn btn-ghost" href="https://monitoring.vahdetkaratas.com/" target="_blank" rel="noopener noreferrer">Streamlit viewer</a>
+<a class="btn btn-ghost" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/artifacts/reports/monitoring_run_report.html" target="_blank" rel="noopener noreferrer">Sample HTML report</a>
+                      </div>
+                      <p class="hero-note">Artifacts are produced by `run_full_monitoring`; the hosted Streamlit viewer is read-only over those files — not a production observability stack.</p>
+                      <div class="metrics" aria-label="Project facts">
+                        <div><span>Python</span></div>
+<div><span>pandas</span></div>
+<div><span>pytest</span></div>
+<div><span>Streamlit</span></div>
+                      </div>
+                    </section>
+
+                    <section id="scope" aria-labelledby="h-scope"><h2 id="h-scope">Limitations &amp; scope</h2><div class="pitch"><ul><li>Demonstrates engineering judgement on monitoring layers — not an enterprise APM or feature store.</li>
+<li>Offline batch flow only; no online inference or auto-remediation.</li>
+<li>Synthetic reference/current splits committed for reproducible review.</li></ul></div></section>
+
+                    <section class="proj-section">
+  <h2 id="h-arch">Pipeline architecture</h2>
+  <p class="proj-section-intro">
+    Each incoming CSV batch runs through validation against <code>data/metadata/schema_definition.json</code>, drift estimation versus the frozen reference window,
+    and optional prediction-behaviour checks. Outputs land under <code>artifacts/reports/</code> and <code>artifacts/drift/</code> for programmatic inspection or dashboards.
+  </p>
+  <div class="proj-arch-visual" aria-hidden="true">
+    <span class="proj-arch-node">Incoming CSV</span><span class="proj-arch-arrow">→</span>
+    <span class="proj-arch-node">Schema validation</span><span class="proj-arch-arrow">→</span>
+    <span class="proj-arch-node">Drift &amp; prediction summary</span><span class="proj-arch-arrow">→</span>
+    <span class="proj-arch-node">Alerts &amp; reports</span>
+  </div>
+  <p class="proj-arch-caption">
+    Orchestration lives in <code>python -m src.pipeline.run_full_monitoring</code>. Simulation helpers regenerate deterministic datasets when needed.
+  </p>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-metrics">What gets measured</h2>
+  <div class="proj-card-grid">
+    <article class="proj-card">
+      <h3 class="proj-card-title">Validation layer</h3>
+      <p>Required columns, dtypes, numeric ranges, categorical domains, and missing-value policies.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Drift layer</h3>
+      <p>Population stability (PSI), Kolmogorov–Smirnov on numeric columns, and categorical shift summaries vs reference.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Prediction monitoring</h3>
+      <p>Distribution checks on model scores and derived labels when present — highlighting silent shifts before downstream KPIs react.</p>
+    </article>
+    <article class="proj-card">
+      <h3 class="proj-card-title">Alerting &amp; narratives</h3>
+      <p>Rule metadata surfaces in JSON reports; decision summaries consolidate severity for reviewers.</p>
+    </article>
+  </div>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-artifacts">Generated artifacts</h2>
+  <ul class="proj-tech-list">
+    <li><strong>report_<em>batch</em>.json</strong> — validation, drift roll-ups, prediction slice, alerts.</li>
+    <li><strong>drift_<em>batch</em>.json</strong> — per-column drift metrics for audit trails.</li>
+    <li><strong>monitoring_overview.csv</strong> — batch-level status matrix across the last run.</li>
+    <li><strong>monitoring_run_report.html</strong> — static HTML digest produced alongside JSON.</li>
+  </ul>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-streamlit">Streamlit viewer</h2>
+  <p class="proj-section-intro">
+    The hosted Streamlit page reads the committed artifacts only — select a batch, inspect alerts, drift tables, and score histograms without recomputing metrics server-side.
+    Treat it as an exploration aid for reviewers, not an online scoring tier.
+  </p>
+</section>
+
+<section class="proj-section">
+  <h2 id="h-quality">Reproducibility &amp; tests</h2>
+  <p class="proj-section-intro">
+    Pytest covers drift math, alert thresholds, simulations, and exporters so changes stay grounded. GitHub Actions installs <code>requirements.txt</code> and runs the suite on each push to <code>main</code>.
+  </p>
+</section>
+
+                  </div>
+
+                  <footer class="shell-project-footer">
+                    <p class="name">ML monitoring &amp; data quality</p>
+                    <p style="margin:0.35rem 0 0;font-size:0.76rem;">Batch validation · drift · prediction checks · tested pipeline</p>
+                  </footer>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid p-30-0">
+              <footer class="footer">
+                <div class="art-copy">© <span id="shellYear"></span> Vahdettin Karatas. All rights reserved.</div>
+                <div class="footer-developer">Batch monitoring, drift detection, and operational ML hygiene.</div>
+              </footer>
+            </div>
+          </main>
+        </div>
+
+        <aside class="shell-rail" aria-label="Home">
+          <div class="shell-rail-header">
+            <a class="shell-rail-home" href="https://vahdetkaratas.com/" id="shellHomeLink" title="Home" aria-label="Home">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="shell-rail-home-icon">
+                <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="shell-rail-spacer" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="shell.js"></script>
+</body>
+</html>
