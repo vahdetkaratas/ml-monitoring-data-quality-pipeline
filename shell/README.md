@@ -9,7 +9,7 @@ This folder builds **recruiter** and **commercial** static shells for the ML mon
 | `recruiter` | `layout-shell/` | project-specific (often portfolio subdomain on karatas) |
 | `commercial` | `layout-shell-commercial/` | **`ml-monitoring.vahdetkaratas.com`** (commercial introduction) |
 
-Labs Streamlit demo only: **`monitoring.vahdetlabs.com`**. Portfolio/recruiter Streamlit (when used): **`monitoring.vahdetkaratas.com`**. Shell builds contain **no FastAPI**.
+Labs Streamlit demo only: **`ml-monitoring.vahdetlabs.com`**. Portfolio/recruiter Streamlit (when used): **`monitoring.vahdetkaratas.com`**. Shell builds contain **no FastAPI**.
 
 ## Files
 
@@ -46,10 +46,10 @@ node shell/render-shell.mjs \
 
 Outputs include `index.html`, copied CSS/JS, `favicon.svg`, `avatar-vk.svg` (shared VK monogram avatar), and embedded `profile.json` for debugging.
 
-**Commercial static host:** **`https://ml-monitoring.vahdetkaratas.com/`** (`layout-shell-commercial`). **Labs Streamlit demo:** **`https://monitoring.vahdetlabs.com/`** — separate subdomain from the intro page.
+**Commercial static host:** **`https://ml-monitoring.vahdetkaratas.com/`** (`layout-shell-commercial`). **Labs Streamlit demo:** **`https://ml-monitoring.vahdetlabs.com/`** — separate subdomain from the intro page.
 
 ## Rules enforced in this adaptation
 
-- Commercial shell deploy targets **`ml-monitoring.vahdetkaratas.com`**; Labs Streamlit uses **`monitoring.vahdetlabs.com`**. Recruiter and commercial share **`avatar-vk.svg`**.
+- Commercial shell deploy targets **`ml-monitoring.vahdetkaratas.com`**; Labs Streamlit uses **`ml-monitoring.vahdetlabs.com`**. Recruiter and commercial share **`avatar-vk.svg`**.
 - Recruiter profile references **`monitoring.vahdetkaratas.com`** Streamlit and portfolio URLs as needed.
 - Shared template uses neutral `.shell-project-page` / `.shell-project-footer` classes — no RAG-specific naming.

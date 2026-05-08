@@ -163,8 +163,8 @@
       "pageTitle": "ML monitoring & data quality — VahdetLabs capability overview",
       "eyebrow": "Operational risk visibility — pilot scope",
       "summary": "Silent schema drift and shifting score distributions erode model trust before KPIs move. This reference pipeline shows how batch validation, drift signals, and structured alerts surface degradation early — scoped for pilots and integration workshops, not as a hosted SaaS.",
-      "metaDescription": "Commercial ML monitoring overview on `ml-monitoring.vahdetkaratas.com`; interactive Streamlit demo on VahdetLabs (`monitoring.vahdetlabs.com`) — batch validation, drift signals, alerts, read-only artefacts.",
-      "heroNote": "This shell is the commercial introduction site (`ml-monitoring.vahdetkaratas.com`). The Streamlit demo runs separately on **`monitoring.vahdetlabs.com`** — same packaged batch artefacts, no inference API.",
+      "metaDescription": "Commercial ML monitoring overview on `ml-monitoring.vahdetkaratas.com`; interactive Streamlit demo on VahdetLabs (`ml-monitoring.vahdetlabs.com`) — batch validation, drift signals, alerts, read-only artefacts.",
+      "heroNote": "This shell is the commercial introduction site (`ml-monitoring.vahdetkaratas.com`). The Streamlit demo runs separately on **`ml-monitoring.vahdetlabs.com`** — same packaged batch artefacts, no inference API.",
       "footerProjectSub": "Pilot-friendly monitoring slice · validation · drift · reporting",
       "stack": ["Python", "pandas", "pytest", "Streamlit", "JSON & HTML reports"],
       "projectLinks": [
@@ -175,7 +175,7 @@
         },
         {
           "label": "Streamlit viewer",
-          "href": "https://monitoring.vahdetlabs.com/",
+          "href": "https://ml-monitoring.vahdetlabs.com/",
           "external": true
         },
         {
@@ -197,7 +197,7 @@
         },
         {
           "label": "Streamlit viewer",
-          "href": "https://monitoring.vahdetlabs.com/",
+          "href": "https://ml-monitoring.vahdetlabs.com/",
           "external": true
         },
         {
@@ -239,7 +239,7 @@
         },
         {
           "label": "Streamlit demo",
-          "href": "https://monitoring.vahdetlabs.com/",
+          "href": "https://ml-monitoring.vahdetlabs.com/",
           "external": true
         },
         {
