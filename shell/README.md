@@ -6,15 +6,15 @@ This folder builds **recruiter** and **commercial** static shells for the ML mon
 
 | Profile | Output directory | Intended host |
 |--------|------------------|---------------|
-| `recruiter` | `layout-shell/` | `ml-monitoring.vahdetkaratas.com` |
-| `commercial` | `layout-shell-commercial/` | `ml-monitoring.vahdetlabs.com` |
+| `recruiter` | `layout-shell/` | project-specific (often portfolio subdomain on karatas) |
+| `commercial` | `layout-shell-commercial/` | **`ml-monitoring.vahdetkaratas.com`** (commercial introduction) |
 
-The **Streamlit artifact viewer** stays separate (e.g. `monitoring.vahdetkaratas.com`). These shells are **static HTML + assets** only — no FastAPI layer is introduced here.
+Labs Streamlit demo only: **`monitoring.vahdetlabs.com`**. Portfolio/recruiter Streamlit (when used): **`monitoring.vahdetkaratas.com`**. Shell builds contain **no FastAPI**.
 
 ## Files
 
 - `index.html` — template with placeholders
-- `shell.css`, `demo-content.css`, `shell.js`, `favicon.svg`, `avatar-commercial.svg`
+- `shell.css`, `demo-content.css`, `shell.js`, `favicon.svg`, `avatar-vk.svg`
 - `profiles/recruiter.json`, `profiles/commercial.json`
 - `projects/monitoring.json` — project metadata + per-profile overrides
 - `body/monitoring.html` — recruiter / proof-of-work body
@@ -44,10 +44,12 @@ node shell/render-shell.mjs \
   --profile commercial
 ```
 
-Outputs include `index.html`, copied CSS/JS, `favicon.svg`, `avatar-commercial.svg` (used by the commercial profile), and embedded `profile.json` for debugging.
+Outputs include `index.html`, copied CSS/JS, `favicon.svg`, `avatar-vk.svg` (shared VK monogram avatar), and embedded `profile.json` for debugging.
+
+**Commercial static host:** **`https://ml-monitoring.vahdetkaratas.com/`** (`layout-shell-commercial`). **Labs Streamlit demo:** **`https://monitoring.vahdetlabs.com/`** — separate subdomain from the intro page.
 
 ## Rules enforced in this adaptation
 
-- Commercial profile avoids `vahdetkaratas.com` domains/subdomains and uses a labs-local avatar (`avatar-commercial.svg`).
-- Recruiter profile may reference the Streamlit viewer on `monitoring.vahdetkaratas.com` and personal portfolio URLs.
+- Commercial shell deploy targets **`ml-monitoring.vahdetkaratas.com`**; Labs Streamlit uses **`monitoring.vahdetlabs.com`**. Recruiter and commercial share **`avatar-vk.svg`**.
+- Recruiter profile references **`monitoring.vahdetkaratas.com`** Streamlit and portfolio URLs as needed.
 - Shared template uses neutral `.shell-project-page` / `.shell-project-footer` classes — no RAG-specific naming.

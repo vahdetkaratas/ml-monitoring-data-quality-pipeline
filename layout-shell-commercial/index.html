@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Batch ML monitoring demo: schema validation, PSI/KS drift, prediction monitoring, alerts, CSV/HTML reports, optional Streamlit viewer.">
+  <meta name="description" content="Commercial ML monitoring overview on `ml-monitoring.vahdetkaratas.com`; interactive Streamlit demo on VahdetLabs (`monitoring.vahdetlabs.com`) — batch validation, drift signals, alerts, read-only artefacts.">
   <meta name="theme-color" content="#0a0c10">
   <title>ML monitoring &amp; data quality — VahdetLabs capability overview</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -29,7 +29,7 @@
           <div class="art-header">
             <div class="art-avatar">
               <a href="https://vahdetlabs.com/" class="art-avatar-curtain">
-                <img src="avatar-commercial.svg" alt="VahdetLabs" width="90" height="90">
+                <img src="avatar-vk.svg" alt="VahdetLabs" width="90" height="90">
                 <i class="fas fa-expand" aria-hidden="true"></i>
               </a>
               <div class="art-lamp-light">
@@ -38,7 +38,7 @@
             </div>
             <h5 class="art-name mb-10"><a href="https://vahdetlabs.com/">VahdetLabs</a></h5>
             <div class="art-sm-text">ML systems delivery — validation, drift visibility, and reliability engineering</div>
-            <div class="art-sm-text art-muted mb-10">Scoped pilots for batch monitoring and operational readiness — not a SaaS platform.</div>
+            
           </div>
 
           <div id="scrollbar2" class="art-scroll-frame">
@@ -65,12 +65,22 @@
               <h6 class="mb-15">Next steps</h6>
               <ul class="art-knowledge-list p-15-0">
                 <li><a href="https://vahdetlabs.com/contact" target="_blank" rel="noopener noreferrer">Book an intro call</a></li>
+<li><a href="https://monitoring.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Streamlit viewer</a></li>
 <li><a href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">VahdetLabs services</a></li>
 <li><a href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline/blob/main/README.md" target="_blank" rel="noopener noreferrer">Technical README</a></li>
               </ul>
             </div>
 
-            
+            <div class="art-knowledge-block p-30-15"><h6 class="mb-15">ML systems</h6><ul class="art-knowledge-list p-15-0"><li><a href="https://batch-scoring.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Batch scoring</a></li>
+<li><a href="https://feature-store.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Feature store</a></li>
+<li><a href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Vahdetlabs</a></li>
+<li><a href="https://ml-monitoring.vahdetkaratas.com/" target="_blank" rel="noopener noreferrer">Commercial overview</a></li>
+<li><a href="https://monitoring.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Streamlit demo</a></li>
+<li><a href="https://churn.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Customer churn prediction</a></li></ul></div><div class="art-knowledge-block p-30-15"><h6 class="mb-15">Data tools</h6><ul class="art-knowledge-list p-15-0"><li><a href="https://data-cleaning.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Data cleaning toolkit</a></li>
+<li><a href="https://eda-report.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">EDA report generator</a></li>
+<li><a href="https://forecasting.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Forecasting demo</a></li>
+<li><a href="https://ai-analysis.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">CSV analytics</a></li>
+<li><a href="https://kpi-dashboard.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">KPI dashboard</a></li></ul></div>
           </div>
 
           <div class="art-ls-social">
@@ -93,6 +103,7 @@
                     <div class="logo" id="top">ML <span>Monitoring</span></div>
                     <div class="nav-actions">
                       <a class="btn btn-primary" href="https://vahdetlabs.com/contact" target="_blank" rel="noopener noreferrer">Discuss a pilot</a>
+<a class="btn btn-ghost" href="https://monitoring.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Streamlit viewer</a>
 <a class="btn btn-ghost" href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">VahdetLabs home</a>
 <a class="btn btn-ghost" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer">Reference implementation</a>
                     </div>
@@ -105,10 +116,11 @@
                       <p class="hero-lead">Silent schema drift and shifting score distributions erode model trust before KPIs move. This reference pipeline shows how batch validation, drift signals, and structured alerts surface degradation early — scoped for pilots and integration workshops, not as a hosted SaaS.</p>
                       <div class="hero-cta">
                         <a class="btn btn-primary" href="https://vahdetlabs.com/contact" target="_blank" rel="noopener noreferrer">Discuss a pilot</a>
+<a class="btn btn-ghost" href="https://monitoring.vahdetlabs.com/" target="_blank" rel="noopener noreferrer">Streamlit viewer</a>
 <a class="btn btn-ghost" href="https://vahdetlabs.com/" target="_blank" rel="noopener noreferrer">VahdetLabs home</a>
 <a class="btn btn-ghost" href="https://github.com/vahdetkaratas/ml-monitoring-data-quality-pipeline" target="_blank" rel="noopener noreferrer">Reference implementation</a>
                       </div>
-                      <p class="hero-note">Static overview page. Pilot engagements adapt connectors, schemas, and thresholds to your batch feeds — without implying full-stack observability.</p>
+                      <p class="hero-note">This shell is the commercial introduction site (`ml-monitoring.vahdetkaratas.com`). The Streamlit demo runs separately on **`monitoring.vahdetlabs.com`** — same packaged batch artefacts, no inference API.</p>
                       <div class="metrics" aria-label="Project facts">
                         <div><span>Python</span></div>
 <div><span>pandas</span></div>
@@ -184,7 +196,7 @@
   <h2 id="h-review">How teams review results</h2>
   <p class="proj-section-intro">
     Decision summaries bubble up severity-ranked alerts while analysts can drill into per-column drift JSON when remediation requires nuance.
-    Optional lightweight viewers can attach to the same outputs when stakeholders prefer charts over raw logs — always anchored on immutable batch artefacts.
+    The commercial introduction site lives at <a href="https://ml-monitoring.vahdetkaratas.com/" target="_blank" rel="noopener noreferrer"><code>ml-monitoring.vahdetkaratas.com</code></a>; the Streamlit workspace for charts and tables is on VahdetLabs at <a href="https://monitoring.vahdetlabs.com/" target="_blank" rel="noopener noreferrer"><code>monitoring.vahdetlabs.com</code></a> — still batch/report-driven, not an inference endpoint.
   </p>
 </section>
 

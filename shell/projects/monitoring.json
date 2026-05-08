@@ -98,18 +98,84 @@
         "Demonstrates engineering judgement on monitoring layers — not an enterprise APM or feature store.",
         "Offline batch flow only; no online inference or auto-remediation.",
         "Synthetic reference/current splits committed for reproducible review."
+      ],
+      "relatedMlSystems": [
+        {
+          "label": "Portfolio",
+          "href": "https://vahdetkaratas.com/portfolio",
+          "external": true
+        },
+        {
+          "label": "Batch scoring",
+          "href": "https://batch-scoring.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Feature store",
+          "href": "https://feature-store.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Vahdetlabs",
+          "href": "https://vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Commercial overview",
+          "href": "https://ml-monitoring.vahdetkaratas.com/",
+          "external": true
+        },
+        {
+          "label": "Customer churn prediction",
+          "href": "https://churn.vahdetlabs.com/",
+          "external": true
+        }
+      ],
+      "relatedDataTools": [
+        {
+          "label": "Data cleaning toolkit",
+          "href": "https://data-cleaning.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "EDA report generator",
+          "href": "https://eda-report.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Forecasting demo",
+          "href": "https://forecasting.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "CSV analytics",
+          "href": "https://ai-analysis.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "KPI dashboard",
+          "href": "https://kpi-dashboard.vahdetlabs.com/",
+          "external": true
+        }
       ]
     },
     "commercial": {
       "pageTitle": "ML monitoring & data quality — VahdetLabs capability overview",
       "eyebrow": "Operational risk visibility — pilot scope",
       "summary": "Silent schema drift and shifting score distributions erode model trust before KPIs move. This reference pipeline shows how batch validation, drift signals, and structured alerts surface degradation early — scoped for pilots and integration workshops, not as a hosted SaaS.",
-      "heroNote": "Static overview page. Pilot engagements adapt connectors, schemas, and thresholds to your batch feeds — without implying full-stack observability.",
+      "metaDescription": "Commercial ML monitoring overview on `ml-monitoring.vahdetkaratas.com`; interactive Streamlit demo on VahdetLabs (`monitoring.vahdetlabs.com`) — batch validation, drift signals, alerts, read-only artefacts.",
+      "heroNote": "This shell is the commercial introduction site (`ml-monitoring.vahdetkaratas.com`). The Streamlit demo runs separately on **`monitoring.vahdetlabs.com`** — same packaged batch artefacts, no inference API.",
       "footerProjectSub": "Pilot-friendly monitoring slice · validation · drift · reporting",
+      "stack": ["Python", "pandas", "pytest", "Streamlit", "JSON & HTML reports"],
       "projectLinks": [
         {
           "label": "Discuss a pilot",
           "href": "https://vahdetlabs.com/contact",
+          "external": true
+        },
+        {
+          "label": "Streamlit viewer",
+          "href": "https://monitoring.vahdetlabs.com/",
           "external": true
         },
         {
@@ -130,6 +196,11 @@
           "external": true
         },
         {
+          "label": "Streamlit viewer",
+          "href": "https://monitoring.vahdetlabs.com/",
+          "external": true
+        },
+        {
           "label": "VahdetLabs services",
           "href": "https://vahdetlabs.com/",
           "external": true
@@ -144,6 +215,65 @@
         "Not a multi-tenant SaaS product — a bounded monitoring slice for scoped delivery.",
         "Assumes batch drops you control; streaming or real-time scoring needs separate design.",
         "Thresholds and schemas are agreement artefacts — tuned per engagement."
+      ],
+      "relatedMlSystems": [
+        {
+          "label": "Batch scoring",
+          "href": "https://batch-scoring.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Feature store",
+          "href": "https://feature-store.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Vahdetlabs",
+          "href": "https://vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Commercial overview",
+          "href": "https://ml-monitoring.vahdetkaratas.com/",
+          "external": true
+        },
+        {
+          "label": "Streamlit demo",
+          "href": "https://monitoring.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Customer churn prediction",
+          "href": "https://churn.vahdetlabs.com/",
+          "external": true
+        }
+      ],
+      "relatedDataTools": [
+        {
+          "label": "Data cleaning toolkit",
+          "href": "https://data-cleaning.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "EDA report generator",
+          "href": "https://eda-report.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "Forecasting demo",
+          "href": "https://forecasting.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "CSV analytics",
+          "href": "https://ai-analysis.vahdetlabs.com/",
+          "external": true
+        },
+        {
+          "label": "KPI dashboard",
+          "href": "https://kpi-dashboard.vahdetlabs.com/",
+          "external": true
+        }
       ]
     }
   }

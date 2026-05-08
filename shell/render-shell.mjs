@@ -240,7 +240,7 @@ async function main() {
     "demo-content.css",
     "shell.js",
     "favicon.svg",
-    "avatar-commercial.svg",
+    "avatar-vk.svg",
   ]) {
     const src = path.join(ROOT, file);
     try {
